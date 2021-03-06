@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "name": "高等数学",
+      "description": "这是一段关于高等数学的介绍",
+      "course": [
+        {
+          "name": "张宇考研数学",
+          "introduce": "张宇很棒巴拉巴拉巴拉",
+          "url": "",
+          "score": 7
+        }
+      ],
+      "preposition": ["高等数学"],
+      "postposition": ["线性代数"],
+      "towerMember": ["高等数学"]
+    }
+  ]
+}

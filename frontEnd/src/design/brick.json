@@ -1,0 +1,26 @@
+{
+    "name":"高等数学",
+    "introduce":"工科学习的基石",
+    "content":{
+        "courses":[
+            {
+                "name":"李永乐",
+                "introduce":"这是一段乱七八糟没有意义的介绍，至于为什么要有这一段介绍，就是为了当事人可以很方便地了解到 这个教程是否适合他",
+                "jiesuo":"2E6Y",
+                "updateTime":"2019-10-19",
+                "great":431,
+                "label":[{
+                    "title":"简单",
+                    "introduce":"课程偏简单"
+                }]
+            }
+        ],
+        "realDone":[],
+        "characters":[],
+        "forums":[],
+        "tools":[],
+        "books":[]
+    },
+    "front":["高中数学"],
+    "behind":["线性代数"]
+}

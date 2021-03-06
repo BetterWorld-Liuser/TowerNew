@@ -1,0 +1,34 @@
+{
+    "id":"sjjsjsjsj",
+    "title":"刷机",
+    "titleId":"balabalabala",
+    "classfication":"总体教程",
+    "subTitle":"第一章",
+    "content":"#sskjsjsjs",
+    "updateTime":"2019-10-20",
+    "collaborator":[
+        {
+            "name":"liuzhengdong",
+            "detailes":"objectId",
+            "editTimes":4
+        }
+    ],
+    "like":134,
+    "history":{
+        "daily":"",
+        "weekly":"",
+        "monthly":"",
+        "yearly":"",
+        "important":[
+            {
+                "name":"第一经典版本",
+                "content":""
+            }
+        ]
+    },
+    "creater":{
+        "name":"liuzhengdong",
+        "detailes":"objectId",
+        "editTimes":4
+    }
+}

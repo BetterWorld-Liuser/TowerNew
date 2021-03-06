@@ -1,0 +1,19 @@
+{
+    "title":"刷机",
+    "watching":10,
+    "module":[
+        {
+            "name":"总体教程",
+            "content":[
+                {
+                    "name":"准备工作",
+                    "articleId":"",
+                    "state":"",
+                    "totalEditTimes":12,
+                    "updateTime":10,
+                    "like":10
+                }
+            ]
+        }
+    ]
+}
