@@ -1,0 +1,104 @@
+html {
+    margin: 0;
+    font-size: 16px;
+}
+
+.confirm {
+    border: 2px solid black;
+    width: 4rem;
+    border-radius: 3px;
+    background-color: #000;
+    color: #fff;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.cancel {
+    border: 2px solid black;
+    width: 4rem;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #000;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+}
+
+* {
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* transition: all 0.5s ease-in-out!important;  */
+}
+
+.blue {
+    background-color: #1890ff;
+}
+
+.red {
+    background-color: #FF4d4f;
+}
+
+.purple {
+    background-color: #722ED1;
+}
+
+.green {
+    background-color: #54F149;
+}
+
+.white {
+    background-color: white;
+}
+
+.orange {
+    background-color: #fa8c16;
+}
+
+.el-icon-more {
+    cursor: pointer;
+}
+
+.el-input {
+    width: 80%;
+    float: left;
+    cursor: text;
+}
+
+a {
+    word-break: break-word;
+}
+
+p img {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+img {
+    display: block;
+}
+
+
+/*动画效果*/
+.slide-fade-enter-active {
+    transition: all 0.8s ease-in-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to
+
+/* .slide-fade-leave-active for below version 2.1.8 */
+    {
+    transform: translateX(10px);
+    opacity: 0;
+}

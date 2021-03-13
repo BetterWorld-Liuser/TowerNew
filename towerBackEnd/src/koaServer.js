@@ -15,25 +15,38 @@ const article = require('./Routes/article')
 const fs = require('fs');
 const path = require('path')
 const schedule = require('node-schedule');
-const app = new Koa(); 
+const app = new Koa();
 const router = new Router();
 const config = require('../config.js');
 
 
-mongoose.connect(config.developMode?config.testMongoUrl:config.localmongoUrl,{ useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.developMode ? config.localMongoUrl : config.remoteMongoUrl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).catch(e=>{
+  console.log(e)
+});
 
-app.use(enforceHttps());
-app.use(koaBodyParser()); //得到post
-app.use(cors()); //跨域
+
+
+if (config.developMode) {
+  //app.use(enforceHttps());
+  app.use(koaBodyParser()); //得到post
+  app.use(cors()); //跨域
+} else {
+  app.use(enforceHttps());
+  app.use(koaBodyParser()); //得到post
+  app.use(cors()); //跨域
+}
 
 
 //一些一般获取资源的请求
 router.use("/users", users);
-router.use('/needlog',needLog)
-router.use('/info',info)
-router.use('/article',article)
-router.use('/brick',brick)
-router.use('/comment',comment)
+router.use('/needlog', needLog)
+router.use('/info', info)
+router.use('/article', article)
+router.use('/brick', brick)
+router.use('/comment', comment)
 //配置路由
 app.use(router.routes(), router.allowedMethods());
 
@@ -44,7 +57,7 @@ const options = {
 };
 
 //定时任务
-schedule.scheduleJob('0 0 0 * * *',async ()=> {
+schedule.scheduleJob('0 0 0 * * *', async () => {
   await userHandler.recoverEditoday()
 })
 
@@ -52,10 +65,10 @@ schedule.scheduleJob('0 0 0 * * *',async ()=> {
 
 
 
-if(config.developMode){
+if (config.developMode) {
   app.listen(7865)
-}else{
-  https.createServer(options,app.callback()).listen(7865)
+} else {
+  https.createServer(options, app.callback()).listen(7865)
 }
 
 //app.listen(7865)

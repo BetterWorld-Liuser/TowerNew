@@ -102,7 +102,7 @@ typings/
 # TernJS port file
 .tern-port
 
-# config file
+# private config file
 config.js
 
 # ssl

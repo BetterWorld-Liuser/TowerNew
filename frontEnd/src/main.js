@@ -27,27 +27,6 @@ Vue.prototype.$axios = Axios
 Vue.prototype.$request = request
 
 new Vue({router,store,render: h => h(App)}).$mount("#app");
-/* import lazyload from 'vue-lazyload' */
-//Vue.use(VueDragTree)
-//import sass from 'sass'
-//import hljs from 'highlight.js'
-//import globalVariable from './global';
-
-//import VueNestable from 'vue-nestable'
-//import VueDragTree from 'vue-drag-tree'
-//Vue.prototype.commonsVariable = globalVariable;
-//import mavonEditor from "mavon-editor";
-/* import "mavon-editor/dist/css/index.css";
-import "vis-network/dist/vis-network.min.css"; */
-//import VueAxios from "vue-axios";
-//Vue.use(sass)
-//Vue.use(VueNestable)
-/* Vue.use(lazyload,{
-  preLoad:4,
-  error:'./assets/error.gif',
-  loading:'./assets/waitingg.gif',
-  attemp:3
-}) */
 
 
 

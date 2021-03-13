@@ -110,17 +110,15 @@ export default {
   methods:{
     async login(){
       let data =await reqLogin.getToken(this.email,this.password)
-      console.log(data)
+      //console.log(data)
       if(data.token){
-        let loseToken = new Date()
         alert(data.message);
-        localStorage.setItem('userEmail', this.email);
-        localStorage.setItem('loginState', true);
-        
-        localStorage.setItem('loseToken',loseToken)
-        if(data.token){
-          this.$store.commit('Login')
-          localStorage.setItem('token',data.token);}
+        let userData={
+          email:this.email,
+          loginState:true,
+          token:data.token
+        }
+        localStorage.setItem('userData', userData);
           this.$router.go(-1)
       }else{
         alert(data.message);
@@ -210,9 +208,4 @@ h2 {
   margin:10px auto;
 }
 
-@media screen and (max-width: 1024px) {
-  .loginPanel {
-    width: 90%;
-  }
-}
 </style>

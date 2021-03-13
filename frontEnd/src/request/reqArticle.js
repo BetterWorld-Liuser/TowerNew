@@ -2,27 +2,12 @@ import app from '../request/main'
 
 class reqArticle {
 
-    //获取文章内容
-    async getArticle(_id,id,moduleId) {
+    //获取文章内容id
+    async getArticle(id) {
         let { data } = await app.get('/article/getArticle',
             {
                 params: {
-                    _id,
                     id,
-                    moduleId
-                }
-            }
-        )
-        return data
-    }
-
-    async getArticleTo(id){
-        let { data } = await app.get('/article/getArticleTo',
-            {
-                params: {
-
-                    id,
-
                 }
             }
         )

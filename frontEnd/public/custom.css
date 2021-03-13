@@ -1,0 +1,93 @@
+/* 布局样式 */
+/* 列排列 */
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 行排列 */
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+/* flex换行*/
+.wrap{
+    flex-wrap: wrap;
+}
+
+/* flex行排列，居中*/
+.flexRJC {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flexCenter {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* block格式 */
+.marginAround10 {
+    margin: 10px;
+}
+
+.bdrd5 {
+    border-radius: 5px;
+}
+
+
+
+/* 字体样式 */
+.bold {
+    font-weight: bold;
+}
+
+/* 火狐字体 */
+.firefox {
+    font-family: Inter, X-LocaleSpecific, sans-serif;
+}
+
+/* 火狐导航的阴影 */
+.firefoxShadow {
+    box-shadow: 0 0 1px 1px rgba(29, 17, 51, .04), 0 0 3px 2px rgba(9, 32, 77, .12), 0 0 2px -3px rgba(29, 17, 51, .12);
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.font20 {
+    font-size: 20px;
+}
+
+.font40 {
+    font-size: 40px;
+}
+
+.font60 {
+    font-size: 60px;
+}
+
+/* 按钮样式 */
+.button {
+    cursor: pointer;
+    color: #e9e9e9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+/* 背景色 */
+.bgf9 {
+    background-color: #F9F9F9;
+}
