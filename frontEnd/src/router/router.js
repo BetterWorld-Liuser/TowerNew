@@ -1,6 +1,6 @@
-import BrickEditor from "../components/bricks/Editor/Editor2.vue";
+import BrickEditor from "../components/Editor/Editor2.vue";
 import Home from "../components/HomeMain.vue";
-import brickv3 from "../components/bricks/brick.vue";
+import brick from "../components/bricks/brick.vue";
 import selfnavbar from "../components/common/selfnavbar.vue"
 import login from "../components/login/login.vue"
 //import square from "../components/square/square.vue"
@@ -15,14 +15,14 @@ const routes = [{
   },
 
   {
-    path: "/brickv3/:id",
-    component: brickv3,
+    path: "/brick/:_id",
+    component: brick,
     props: true,
-    name: 'brickv3'
+    name: 'brick'
   },
 
   {
-    path: "/markdownEditor/:id",
+    path: "/markdownEditor/:_id",
     component: BrickEditor,
     name: 'markdownEditor'
   },

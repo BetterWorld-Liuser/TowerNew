@@ -47,11 +47,9 @@ export default class menu {
     }
 
     //修改标题 - 需要提交
-    renameTitle(){
-          let newTitle = prompt("请输入新的标题（恶意修改将导致封号）");
-          if (newTitle == null) return;  
+    renameName(newName){
           let i = this.findNode(this.NodeSelected)
-          this.menuContent[i].title = newTitle;
+          this.menuContent[i].name = newName;
     }
 
     //删除节点
@@ -60,13 +58,8 @@ export default class menu {
     }
 
     //修改层级
-    relevel() {
-        let r = prompt("请修改当前模块的层级", this.menuContent[this.NodeSort].level);
-        if (r < 6 && r >= 0) {
-          this.menuContent[this.NodeSort].level = r;
-        } else {
-          alert("修改层数过大或过小");
-        }
+    relevel(level) {
+          this.menuContent[this.NodeSort].level = level;
     }
 
     //交换层级顺序

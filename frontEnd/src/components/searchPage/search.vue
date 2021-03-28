@@ -17,8 +17,8 @@
             placement="bottom"
           >
             <div
-              class="addBrick"
-              @click="addBrick()"
+              class="createBrick"
+              @click="createBrick()"
             >
               <i class="el-icon-s-promotion" />
             </div>
@@ -53,7 +53,7 @@
     </div>
     <div class="brick-list flexRow bgf9">
       <div
-        class="brickItem bdrd5 marginAround10"
+        class="brickItem bdrd5 "
         v-for="item in brickList"
         :key="item._id"
         @click="goto(item._id)"
@@ -84,13 +84,13 @@
 </template>
 
 <script>
-//import navself from "../component_common/selfnavbar";
-import reqBrick from '../../request/reqBrick';
+import userState from '../bricks/UserState';
+import app from "../../newRequest/main"
 
 export default {
   data() {
     return {
-      
+      user:new userState(),
       brickListHot: [
         {
           _id: 1,
@@ -116,27 +116,44 @@ export default {
     this.initData();
   },
   methods: {
-    async initData(){
-      this.brickListHot =await reqBrick.getOneHundredHot();
-      this.brickListNew= await reqBrick.getOneHundredNew();
-      this.brickSearchBase = await reqBrick.getBrickList();
+    async initData(){//初始化数据
+      this.brickListHot =await this.getOneHundredHot();
+      this.brickListNew= await this.getOneHundredNew();
+      this.brickSearchBase = await this.getBrickList();
+      this.user.getUserLocalData()
     },
-    goto(id){
-      this.$router.push({ name: "brickv3", params: { id: id } })
-    },
-    async addBrick(){
-      if (this.loginState == false) {
+    async createBrick(){
+      if (this.user.userData.loginState==false) {
         alert("创建砖石需要登录");
         return;
       }
+
       let r = prompt("请输入砖石的名字");
       if (!r) {
         alert("请输入砖石的名称");
         return;
       }
-      let data = await reqBrick.createNewBrick(r);
+
+      let {data} = await app.post('/searchpage/createBrick',{
+        title:r,email:this.user.userData.email
+      })
       alert(data.message);
-      this.$router.push({ name: "brickv3", params: { id: data.id } });
+      this.$router.push({ name: "brick", params: { _id: data._id } });
+    },
+    async getOneHundredHot(){
+        let {data}=await app.get('/searchpage/oneHundredBrickHot')
+        return data.res
+    },
+    async getOneHundredNew(){//获取最新100个砖石
+        let {data}=await app.get('/searchpage/oneHundredBrickNew')
+        return data.res
+    },
+    async getBrickList(){//获得砖石列表
+        let {data}=await app.get('/searchpage/searchList')
+        return data.res
+    },
+    goto(_id){//进入某个砖石
+      this.$router.push({ name: "brick", params: { _id } })
     }
   },
   computed:{
@@ -203,7 +220,7 @@ export default {
     position:absolute;
     top:140px;
     height:40px;
-    .addBrick{
+    .createBrick{
       background-color: white;
       width:30px;
       height:30px;
@@ -272,6 +289,7 @@ export default {
     transition:all 0.5s ease-out;
     position:relative;
     cursor: pointer;
+    margin:10px;
     .title{
       min-height:25px;
       .titlego{

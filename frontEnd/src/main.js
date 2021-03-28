@@ -11,6 +11,7 @@ import storedata from "./store/data"
 import request from "./request/main"
 import Contextmenu from "vue-contextmenujs"
 import './plugins/element.js'
+import VueToc from 'vue-toc'
 
 Vue.config.productionTip = false;
 
@@ -19,6 +20,7 @@ Vue.use(less)
 Vue.use(Element);
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(VueToc)
 
 const router = new VueRouter({routes,mode: "history"});
 const store = new Vuex.Store(storedata)

@@ -1,5 +1,6 @@
 module.exports = {
-    developMode:false,
-    remoteMongoUrl:"",
-    localMongoUrl:""
+    developMode:true,
+    remoteMongoUrl:"mongodb://",
+    localMongoUrl:"mongodb://",
+    tokenSecret:""
 }

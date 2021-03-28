@@ -2,15 +2,6 @@ import app from '../request/main'
 
 class reqBrick {
 
-    //获取砖石
-    async getBrick(_id) {
-
-        let { data } = await app.get('/brick/getBrick', {
-            params: { _id }
-        })
-
-        return data
-    }
     //新建砖石
     async createNewBrick(title) {
 

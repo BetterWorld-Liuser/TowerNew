@@ -3,34 +3,32 @@ const Router = require("@koa/router");
 const koaBodyParser = require("koa-bodyparser");
 const cors = require("koa2-cors");
 const mongoose = require("mongoose");
-const userHandler = require('./DB/userhandle')
 const enforceHttps = require('koa-sslify').default;
 const https = require('https');
-const needLog = require('./Routes/needLog')
-const users = require('./Routes/user')
-const info = require('./Routes/info')
-const brick = require('./Routes/brick')
-const comment = require('./Routes/comment')
-const article = require('./Routes/article')
 const fs = require('fs');
 const path = require('path')
 const schedule = require('node-schedule');
 const app = new Koa();
 const router = new Router();
 const config = require('../config.js');
+const brickPage = require('./routes/brickPage')
+const editor = require('./routes/editor')
+const login = require('./routes/login')
+const mainPage = require('./routes/mainPage')
+const searchPage = require('./routes/searchPage')
 
 
-mongoose.connect(config.developMode ? config.localMongoUrl : config.remoteMongoUrl, {
+mongoose.connect(config.developMode?config.localMongoUrl:config.productionUrl
+  , {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).catch(e=>{
+}).catch(e => {
   console.log(e)
 });
 
 
 
 if (config.developMode) {
-  //app.use(enforceHttps());
   app.use(koaBodyParser()); //得到post
   app.use(cors()); //跨域
 } else {
@@ -41,37 +39,37 @@ if (config.developMode) {
 
 
 //一些一般获取资源的请求
-router.use("/users", users);
-router.use('/needlog', needLog)
-router.use('/info', info)
-router.use('/article', article)
-router.use('/brick', brick)
-router.use('/comment', comment)
-//配置路由
+router.use("/brickpage", brickPage);
+router.use('/editor', editor)
+router.use('/user', login)
+router.use('/mainpage', mainPage)
+router.use('/searchpage', searchPage)
+
 app.use(router.routes(), router.allowedMethods());
 
 
+//导入ssl证书
 const options = {
   key: fs.readFileSync(path.join(__dirname, "../ssl/ssl.key")),
   cert: fs.readFileSync(path.join(__dirname, "../ssl/ssl.pem"))
 };
 
-//定时任务
-schedule.scheduleJob('0 0 0 * * *', async () => {
-  await userHandler.recoverEditoday()
-})
-
-
-
-
-
+//启动服务器
 if (config.developMode) {
   app.listen(7865)
 } else {
   https.createServer(options, app.callback()).listen(7865)
 }
 
-//app.listen(7865)
+//每日任务
+const job = schedule.scheduleJob('0 0 0 * *', async () => {
+  await infoModel.updateOne({}, {
+    visitToday: 0,
+    userNew: 0,
+    brickNew: 0,
+    articleNew: 0
+  })
+})
 
 
 

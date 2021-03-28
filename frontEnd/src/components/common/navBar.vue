@@ -5,7 +5,6 @@
   >
     <div
       id="homeCard"
-      v-if="homeCard"
       class="tCard"
     >
       <div
@@ -22,7 +21,7 @@
       </div>
       <div
         class="button selector"
-        @click="urlpush('brickv3/5e9b4d8828490c2f9ebf9064')"
+        @click="urlpush('brick/5e9b4d8828490c2f9ebf9064')"
       >
         介绍
       </div>
@@ -33,23 +32,13 @@
       >反馈</a>
     </div>
     <div
-      id="managerCard"
-      v-if="managerCard"
-      class="tCard"
-    >
-      <div class="button selector">
-        管理
-      </div>
-    </div>
-    <div
       id="userCard"
-      v-if="userCard"
       class="tCard"
     >
       <Avataaars style="position:relative;bottom:3px; width:40px;" />
       <div
         class="button selector"
-        v-if="!loginState"
+        v-if="!user.userData.loginState"
         @click="urlpush('/login')"
       >
         登录
@@ -57,27 +46,9 @@
       <div
         class="button selector"
         v-else
-        @click="giveAlert('敬请期待')"
+        @click="alert('敬请期待')"
       >
         个人中心
-      </div>
-    </div>
-    <div
-      id="editCard"
-      v-if="editCard"
-      class="tCard"
-    >
-      <div
-        class="bold"
-        @click="postArticle()"
-      >
-        提交
-      </div>
-      <div
-        class="bold"
-        @click="urlBack()"
-      >
-        返回
       </div>
     </div>
   </div>
@@ -85,134 +56,36 @@
 
 <script>
 import Avataaars from "vuejs-avataaars";
-import reqInfo from "../../request/reqInformation";
-import reqBrick from "../../request/reqBrick";
+import userObject from "../bricks/UserState"
 
 export default {
   name: "NavBar",
   components: {
     Avataaars,
   },
-  async created() {
+  created() {
     //登录过期
-    let loseToken = localStorage.getItem("loseToken");
-    let timeInterval = Math.abs(new Date() - new Date(loseToken));
-    if (timeInterval / 1000 / 60 / 60 / 24 <= 7) {
-      this.userEmail = localStorage.getItem("userEmail");
-      this.$store.commit("Login");
-    } else {
-      this.userEmail = null;
-      this.$store.commit("noLogin");
-    }
-
-    this.searchItem = await reqInfo.getSearchItem();
+    this.user.getUserLocalData()
     //console.log(this.searchItem)
   },
   data() {
     return {
-      userEmail: "",
-      input: "",
-      searchShow: false,
-      searchItem: [
-        {
-          name: "123",
-          id: "11",
-        },
-        { name: "456", id: "12" },
-        { name: "678", id: "13" },
-      ],
+      user:new userObject()
     };
   },
   methods: {
-    searchShowMethod(res){
-      if(res.length!=0){
-        this.searchShow =true;
-      }
-    },
-    searchItemNoShow() {
-        this.searchShow = false;
-    },
-    pushBrick(id) {
-      //console.log('123')
-      this.$router.push({ name: "brickv3", params: { id: id } });
-      this.input = "";
-    },
     urlpush(url) {
       this.$router.push(url);
-    },
-    getEmail() {
-      this.userEmail = localStorage.getItem("userEmail");
-      return this.userEmail;
-    },
-    checkBrickState() {
-      let url = window.location.href;
-      return url.includes("brick");
-    },
-    urlBack() {
-      this.$router.go(-1);
-      this.$store.commit("closeEditCard");
-    },
-    async addBrick() {
-      if (this.loginState == false) {
-        alert("创建砖石需要登录");
-        return;
-      }
-      let r = prompt("请输入砖石的名字");
-      if (!r) {
-        alert("请输入砖石的名称");
-        return;
-      }
-      let data = await reqBrick.createNewBrick(r);
-      alert(data.message);
-      this.$router.push({ name: "brickv3", params: { id: data.id } });
-    },
-    postArticle() {
-      this.$store.commit("postArticle");
-    },
-    giveAlert(speak) {
-      alert(speak);
-    },
+    }
   },
   computed: {
-    brickState() {
-      return localStorage.getItem("brickState");
-    },
-    homeCard() {
-      return this.$store.state.homeCard;
-    },
-    managerCard() {
-      return this.$store.state.managerCard;
-    },
-    userCard() {
-      return this.$store.state.userCard;
-    },
-    addCard() {
-      return this.$store.state.addCard;
-    },
-    searchRes() {
-      if (this.input == "") {
-        return [];
-      }
-      let res = this.searchItem.filter((el) => {
-        let re = new RegExp(this.input, "i");
-        return el.name.match(re);
-      });
-      this.searchShowMethod(res);
-      return res;
-    },
-    editCard() {
-      return this.$store.state.editCard;
-    },
-    loginState() {
-      return this.$store.state.loginState;
-    },
   },
 };
 </script>
 
 <style lang="less" scoped>
 #navBar {
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   display: flex;
   flex-direction: row;

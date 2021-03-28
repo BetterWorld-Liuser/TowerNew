@@ -36,14 +36,19 @@
 </template>
 
 <script>
+//import app from '../../request/main';
 //import navbar from "../component_common/selfnavbar";
-import reqLogin from '../../request/reqLogin';
+//import reqLogin from '../../request/reqLogin';
+import app from '../../newRequest/main'
+import md5 from "md5"
+import userState from "../bricks/UserState"
 
 export default {
   data(){
     return{
       email:"",
-      password:""
+      password:"",
+      user:new userState()
     }
   },
   mounted() {
@@ -108,20 +113,22 @@ export default {
     });
   },
   methods:{
-    async login(){
-      let data =await reqLogin.getToken(this.email,this.password)
+    async login(){//登录
+      let {userData,token,message} = (await app.post('/user/login',{
+        email:this.email,
+        password:md5(this.password)
+      })).data
+      
       //console.log(data)
-      if(data.token){
-        alert(data.message);
-        let userData={
-          email:this.email,
-          loginState:true,
-          token:data.token
-        }
-        localStorage.setItem('userData', userData);
-          this.$router.go(-1)
+      if(token){
+        alert(message);
+        this.user.userData.loginState = true;
+        this.user.userData.email = userData.email;
+        this.user.userData.token = token;
+        this.user.userData.level = userData.level
+        this.user.localizeData();
       }else{
-        alert(data.message);
+        alert(message);
       }
       }
     

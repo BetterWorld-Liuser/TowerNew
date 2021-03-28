@@ -22,26 +22,51 @@
         Create By liu
       </div>
     </div>
+    <div class="infoBar flexRow font18">
+      <div>今日访问新增{{ info.visitToday }}</div>
+      <div>今日砖石新增{{ info.brickNew }}</div>
+      <div>今日用户新增{{ info.userNew }}</div>
+      <div>今日模块新增{{ info.articleNew }}</div>
+      <div>总访问数{{ info.visit }}</div>
+      <div>砖石总数{{ info.brickNumber }}</div>
+      <div>用户总数{{ info.userNumber }}</div>
+      <div>文章总数{{ info.articleNumber }}</div>
+    </div>
   </div>
 </template>
 
 <script>
+import app from '../request/main'
 export default {
-  created() {},
+  data(){
+    return{
+      info:{}
+    }
+  },
+  methods:{
+  },
+  async created() {
+    let {data} = await app.get('/mainpage/getInfo')
+    this.info = data.res
+  },
 };
+//今日访问量 
+//今日砖石新增
+//今日用户新增
+//今日模块新增
+
+//总访问量
+//砖石总量
+//总用户数量
+//模块总数
 </script>
 
 <style scoped>
-.main {
-  width: 80%;
-  height: auto;
-  color:white;
-}
+
 .container {
   display: flex;
   color: black;
-  flex-direction: row;
-  flex-flow: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 700px;
@@ -51,6 +76,11 @@ export default {
   background-size: 100%;
 }
 
+.main {
+  width: 80%;
+  height: auto;
+  color:white;
+}
 .title {
   animation: twinkling 1s ease-in-out 1;
   animation-fill-mode: backwards;
@@ -81,7 +111,7 @@ export default {
   position: relative;
   right:150px;
   font-size: 1rem;
-  color: rgb(110, 110, 110);
+  color: rgb(255, 255, 255);
   margin-top: 2rem;
   animation: twinkling 1s ease-in-out 2.5s 1;
   animation-fill-mode: backwards;
@@ -95,4 +125,13 @@ export default {
     opacity: 1;
   }
 }
+
+.infoBar{
+  width: 80%;
+  height: auto;
+  color:white;
+  margin-top:50px;
+  justify-content: space-around;
+}
+
 </style>

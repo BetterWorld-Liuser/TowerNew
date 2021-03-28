@@ -1,4 +1,4 @@
-import reqArticle from "../../request/reqArticle"
+import app from "../../newRequest/main"
 export default class articleObject {
     articleData={
         _id:"",
@@ -14,8 +14,8 @@ export default class articleObject {
       }
 
     //获取文章数据
-    async getArticleData(id){
-       let data =  await reqArticle.getArticle(id)
+    async getArticleData(_id){
+       let {data} =  await app.get('/brickpage/getArticle',{params:{_id}})
        this.articleData = data.res;
     }
 }
