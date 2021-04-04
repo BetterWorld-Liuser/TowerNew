@@ -5,7 +5,7 @@
         通天塔
       </div>
       <div class="font16">
-        v0.4.0
+        v0.4.1
       </div>
       <div class="subtitle font20">
         通天塔是一个可供所有人编辑和学习的学习指南
