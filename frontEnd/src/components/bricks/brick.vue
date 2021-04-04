@@ -38,7 +38,7 @@
           >
             <div
               :class="['item', menu.NodeSelected == el._id ? 'selected' : '']"
-              @click="menuNodeClick(el)"
+              @click="pushTo(el)"
             >
               <div
                 :class="['listTitle', el.level == 0 ? 'bold' : '']"
@@ -202,6 +202,7 @@ export default {
       this.menu.getMenu(this.brick.brickData.modules);
       this.menu.getTitle(this.brick.brickData.title);
       this.menu.initData();
+      this.goToModule(this.routerModuleId)
       this.$nextTick(() => {
         let contentRender = document.getElementsByClassName("contentRender")[0];
         VditorMethod.preview(contentRender, this.article.articleData.content, {
@@ -209,9 +210,10 @@ export default {
         });
       });
     },
-    async menuNodeClick(el) {
-      this.menu.changeNodeSelected(el._id);
-      await this.article.getArticleData(el.id);
+    async goToModule(_id) {
+      if(_id==null)return;
+      this.menu.changeNodeSelected(_id);
+      await this.article.getArticleData(this.menu.menuContent[this.menu.NodeSort].id);
     },
     switchIndex(menuIndex) {
       if(!this.user.userData.loginState){
@@ -272,7 +274,7 @@ export default {
       if(!conf)return
       await this.brick.createModule(
         0,
-        this.menu.NodeSort,
+        this.menu.NodeSort+1,
         this.user.userData.email
       );
       await this.init();
@@ -296,11 +298,25 @@ export default {
         name: "markdownEditor",
         params: { _id: this.article.articleData._id },
       });
-    }
+    },
+    pushTo(el){
+      this.$router.push({
+        name:"brick",
+        params:{
+          _id:this.brickId,
+          moduleId:el._id
+        }
+      })
+      this.goToModule(el._id)
+      }
+    
   },
   computed: {
     brickId() {
       return this.$route.params._id;
+    },
+    routerModuleId(){
+      return this.$route.params.moduleId;
     },
     content() {
       return this.article.articleData.content;
@@ -362,7 +378,7 @@ export default {
       }
     }
     .menuTool {
-      top: 600px;
+      margin-top:10px;
       width: 300px;
       height: 80px;
       flex-wrap: wrap;
@@ -427,7 +443,7 @@ export default {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
-  height: 92%;
+  height: 455px;
   overflow-y: scroll;
   overflow-x: none;
   scrollbar-width: none;

@@ -8,7 +8,6 @@ import VueRouter from "vue-router";
 import Vuex from 'vuex'
 import less from 'less'
 import storedata from "./store/data"
-import request from "./request/main"
 import Contextmenu from "vue-contextmenujs"
 import './plugins/element.js'
 import VueToc from 'vue-toc'
@@ -26,7 +25,6 @@ const router = new VueRouter({routes,mode: "history"});
 const store = new Vuex.Store(storedata)
 
 Vue.prototype.$axios = Axios
-Vue.prototype.$request = request
 
 new Vue({router,store,render: h => h(App)}).$mount("#app");
 

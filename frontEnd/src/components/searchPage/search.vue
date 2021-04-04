@@ -192,7 +192,7 @@ export default {
 <style scoped lang="less">
 
 .main{
-  background:url(../../assets/background-2.jpg) no-repeat;
+  background:url(https://picgoliuzhengdong.oss-cn-shanghai.aliyuncs.com/img/background-2.jpg) no-repeat;
 }
 .search-bar {
   width: 100%;

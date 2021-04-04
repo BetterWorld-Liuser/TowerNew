@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import TowerConfig from '../../towerConfig'
+import TowerConfig from '../../config'
 
 let app = new Axios.create({
     baseURL: TowerConfig.developmentMode?TowerConfig.developmentURL:TowerConfig.productionURL,

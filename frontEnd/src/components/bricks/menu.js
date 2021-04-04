@@ -1,6 +1,6 @@
 export default class menu {
-    NodeSelected=""
-    NodeSort = 0;
+    NodeSelected=""//节点的选择
+    NodeSort = 0;//节点地位置
     titleEditable=false
     title="加载中"
     menuContent=[]

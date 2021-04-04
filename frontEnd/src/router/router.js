@@ -15,10 +15,10 @@ const routes = [{
   },
 
   {
-    path: "/brick/:_id",
+    path: "/brick/:_id/:moduleId",
     component: brick,
-    props: true,
-    name: 'brick'
+    name: 'brick',
+    props:true
   },
 
   {

@@ -1,6 +1,6 @@
 import createVuexAlong from 'vuex-along'
 //import reqArticle from '../request/reqArticle'
-import reqArticle from '../request/reqArticle'
+//import reqArticle from '../request/reqArticle'
 const store = {
   state: {
   dragOpen:false,
@@ -50,13 +50,6 @@ const store = {
         state.editVersion = ''
       }
     },
-    async postArticle(state){
-      state.editCard=false
-      let res = await reqArticle.changeArticle(state.editId,state.editContent,state.editVersion)
-      alert(res)
-      window.history.back(-1);
-      //await reqArticle.changeArticle(_id,email,content,version,oldversion)
-    }
 
 
 

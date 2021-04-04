@@ -36,9 +36,6 @@
 </template>
 
 <script>
-//import app from '../../request/main';
-//import navbar from "../component_common/selfnavbar";
-//import reqLogin from '../../request/reqLogin';
 import app from '../../newRequest/main'
 import md5 from "md5"
 import userState from "../bricks/UserState"
@@ -127,6 +124,8 @@ export default {
         this.user.userData.token = token;
         this.user.userData.level = userData.level
         this.user.localizeData();
+        this.$router.push("/");
+        location.reload();
       }else{
         alert(message);
       }

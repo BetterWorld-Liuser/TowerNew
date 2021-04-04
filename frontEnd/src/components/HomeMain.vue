@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import app from '../request/main'
+import app from '../newRequest/main'
 export default {
   data(){
     return{
@@ -72,7 +72,7 @@ export default {
   height: 700px;
   width: 100%;
   text-align: center;
-  background:url(../assets/MainBackground.jpg) no-repeat;
+  background:url(https://picgoliuzhengdong.oss-cn-shanghai.aliyuncs.com/img/MainBackground.jpg) no-repeat;
   background-size: 100%;
 }
 
