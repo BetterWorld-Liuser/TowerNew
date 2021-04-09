@@ -1,8 +1,0 @@
-/* 修正下拉菜单的颜色 */
-.el-dropdown-menu__item{
-    color:black!important;
-    
-}
-.el-dropdown-menu__item:hover{
-      background-color:#fff7e6!important ;
-}
