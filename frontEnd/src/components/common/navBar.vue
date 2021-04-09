@@ -21,7 +21,7 @@
       </div>
       <div
         class="button selector"
-        @click="urlpush('brick/5e9b4d8828490c2f9ebf9064')"
+        @click="urlpush('brick/5e9b4d8828490c2f9ebf9064/5e9b558e28490c2f9ebf9065')"
       >
         介绍
       </div>

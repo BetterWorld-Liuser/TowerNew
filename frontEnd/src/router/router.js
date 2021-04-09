@@ -24,7 +24,8 @@ const routes = [{
   {
     path: "/markdownEditor/:_id",
     component: BrickEditor,
-    name: 'markdownEditor'
+    name: 'markdownEditor',
+    props:true
   },
 
   {

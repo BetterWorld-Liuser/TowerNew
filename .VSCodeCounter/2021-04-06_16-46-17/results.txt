@@ -1,0 +1,155 @@
+Date : 2021-04-06 16:46:17
+Directory : c:\Users\liu\Documents\GitHub\TowerNew
+Total : 95 files,  40098 codes, 600 comments, 1211 blanks, all 41909 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          9 |     32,413 |          0 |          6 |     32,419 |
+| CSS        |         15 |      3,810 |        250 |        748 |      4,808 |
+| Vue        |         15 |      2,110 |         39 |        116 |      2,265 |
+| JavaScript |         48 |      1,722 |        311 |        330 |      2,363 |
+| Markdown   |          6 |         26 |          0 |          7 |         33 |
+| HTML       |          2 |         17 |          0 |          4 |         21 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                        | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                           |         95 |     40,098 |        600 |      1,211 |     41,909 |
+| backEnd                                                                                     |         33 |      5,302 |         98 |        223 |      5,623 |
+| backEnd\abandon                                                                             |         11 |        292 |         30 |        116 |        438 |
+| backEnd\abandon\Routes                                                                      |          7 |        168 |         10 |         79 |        257 |
+| backEnd\abandon\handler                                                                     |          4 |        124 |         20 |         37 |        181 |
+| backEnd\src                                                                                 |         19 |        561 |         68 |        105 |        734 |
+| backEnd\src\DB                                                                              |          9 |        141 |          7 |         23 |        171 |
+| backEnd\src\DB\SchemaAndModel                                                               |          6 |        116 |          1 |         15 |        132 |
+| backEnd\src\DB\admin                                                                        |          3 |         25 |          6 |          8 |         39 |
+| backEnd\src\mail                                                                            |          1 |         27 |          6 |          3 |         36 |
+| backEnd\src\routes                                                                          |          6 |        281 |         36 |         46 |        363 |
+| frontEnd                                                                                    |         57 |     34,771 |        502 |        981 |     36,254 |
+| frontEnd\production                                                                         |          8 |        194 |        204 |         50 |        448 |
+| frontEnd\production\css                                                                     |          2 |          4 |         50 |          1 |         55 |
+| frontEnd\production\js                                                                      |          2 |         14 |        137 |          0 |        151 |
+| frontEnd\public                                                                             |          4 |        191 |         17 |         53 |        261 |
+| frontEnd\src                                                                                |         40 |      6,510 |        281 |        874 |      7,665 |
+| frontEnd\src\assets                                                                         |          6 |      3,456 |        166 |        648 |      4,270 |
+| frontEnd\src\assets\gitlab                                                                  |          1 |        724 |          6 |        174 |        904 |
+| frontEnd\src\components                                                                     |         21 |      2,304 |         65 |        145 |      2,514 |
+| frontEnd\src\components\Editor                                                              |          1 |        174 |          0 |          7 |        181 |
+| frontEnd\src\components\bricks                                                              |          6 |        750 |         42 |         44 |        836 |
+| frontEnd\src\components\common                                                              |         11 |        760 |          9 |         50 |        819 |
+| frontEnd\src\components\login                                                               |          1 |        188 |          6 |         24 |        218 |
+| frontEnd\src\components\searchPage                                                          |          1 |        313 |          0 |          9 |        322 |
+| frontEnd\src\css                                                                            |          1 |          0 |          0 |          1 |          1 |
+| frontEnd\src\design                                                                         |          5 |        107 |          0 |          2 |        109 |
+| frontEnd\src\newRequest                                                                     |          1 |         11 |          0 |          2 |         13 |
+| frontEnd\src\plugins                                                                        |          1 |          4 |          0 |          2 |          6 |
+| frontEnd\src\router                                                                         |          1 |         39 |          1 |          5 |         45 |
+| frontEnd\src\store                                                                          |          2 |        532 |         49 |         47 |        628 |
+| updateMD                                                                                    |          3 |         16 |          0 |          2 |         18 |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                    | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\liu\Documents\GitHub\TowerNew\README.md                                            | Markdown   |          8 |          0 |          5 |         13 |
+| c:\Users\liu\Documents\GitHub\TowerNew\REM.md                                               | Markdown   |          1 |          0 |          0 |          1 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\Routes\article.js                    | JavaScript |         36 |          4 |         18 |         58 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\Routes\brick.js                      | JavaScript |          5 |          0 |          7 |         12 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\Routes\comment.js                    | JavaScript |         28 |          0 |          7 |         35 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\Routes\info.js                       | JavaScript |         18 |          0 |          4 |         22 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\Routes\needLog.js                    | JavaScript |         16 |          0 |         15 |         31 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\Routes\newRoutes.js                  | JavaScript |         32 |          3 |         14 |         49 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\Routes\user.js                       | JavaScript |         33 |          3 |         14 |         50 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\handler\articleHanlde.js             | JavaScript |         44 |          5 |         11 |         60 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\handler\authorityHandler.js          | JavaScript |          0 |          0 |          1 |          1 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\handler\brickHandle.js               | JavaScript |          7 |          1 |          7 |         15 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\abandon\handler\userhandle.js                | JavaScript |         73 |         14 |         18 |        105 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\configFile.js                                | JavaScript |          6 |          0 |          0 |          6 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\package-lock.json                            | JSON       |      4,412 |          0 |          1 |      4,413 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\package.json                                 | JSON       |         31 |          0 |          1 |         32 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\SchemaAndModel\article.js             | JavaScript |         28 |          0 |          2 |         30 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\SchemaAndModel\authorityTree.js       | JavaScript |         10 |          0 |          1 |         11 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\SchemaAndModel\brick.js               | JavaScript |         22 |          0 |          3 |         25 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\SchemaAndModel\comments.js            | JavaScript |         15 |          0 |          4 |         19 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\SchemaAndModel\information.js         | JavaScript |         12 |          0 |          3 |         15 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\SchemaAndModel\user.js                | JavaScript |         29 |          1 |          2 |         32 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\admin\adminMethod.js                  | JavaScript |         13 |          6 |          7 |         26 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\admin\adminString.js                  | JavaScript |          0 |          0 |          1 |          1 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\DB\admin\power.js                        | JavaScript |         12 |          0 |          0 |         12 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\encryption.js                            | JavaScript |         19 |          0 |          9 |         28 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\koaServer.js                             | JavaScript |         81 |         14 |         16 |        111 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\mail\mailer.js                           | JavaScript |         27 |          6 |          3 |         36 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\routes\brickPage.js                      | JavaScript |        131 |         18 |         23 |        172 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\routes\editor.js                         | JavaScript |         24 |          2 |          6 |         32 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\routes\login.js                          | JavaScript |         63 |          2 |          6 |         71 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\routes\mainPage.js                       | JavaScript |         11 |          8 |          4 |         23 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\routes\searchPage.js                     | JavaScript |         51 |          6 |          7 |         64 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\routes\说明.md                             | Markdown   |          1 |          0 |          0 |          1 |
+| c:\Users\liu\Documents\GitHub\TowerNew\backEnd\src\test.js                                  | JavaScript |         12 |          5 |          8 |         25 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\babel.config.js                             | JavaScript |          5 |          0 |          1 |          6 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\configExp.js                                | JavaScript |          5 |          0 |          1 |          6 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\package-lock.json                           | JSON       |     27,798 |          0 |          1 |     27,799 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\package.json                                | JSON       |         65 |          0 |          1 |         66 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\production\base.css                         | CSS        |         83 |          4 |         22 |        109 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\production\css\app.7c960409.css             | CSS        |          2 |         25 |          1 |         28 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\production\css\chunk-vendors.929857d0.css   | CSS        |          2 |         25 |          0 |         27 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\production\custom.css                       | CSS        |         86 |         12 |         26 |        124 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\production\index.html                       | HTML       |          1 |          0 |          0 |          1 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\production\js\app.7c670719.js               | JavaScript |          1 |          1 |          0 |          2 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\production\js\chunk-vendors.4fe0b635.js     | JavaScript |         13 |        136 |          0 |        149 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\production\recoverELement.css               | CSS        |          6 |          1 |          1 |          8 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\public\base.css                             | CSS        |         83 |          4 |         22 |        109 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\public\custom.css                           | CSS        |         86 |         12 |         26 |        124 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\public\index.html                           | HTML       |         16 |          0 |          4 |         20 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\public\recoverELement.css                   | CSS        |          6 |          1 |          1 |          8 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\App.vue                                 | Vue        |         33 |          0 |          8 |         41 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\assets\gitlab.css                       | CSS        |        553 |          7 |        124 |        684 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\assets\gitlab\cobalt.css                | CSS        |        724 |          6 |        174 |        904 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\assets\index.css                        | CSS        |          1 |         25 |          0 |         26 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\assets\misty-light-windows.css          | CSS        |        380 |          5 |          0 |        385 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\assets\pie-dark.css                     | CSS        |        935 |         69 |        193 |      1,197 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\assets\pie.css                          | CSS        |        863 |         54 |        157 |      1,074 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\Editor\Editor2.vue           | Vue        |        174 |          0 |          7 |        181 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\HomeMain.vue                 | Vue        |        119 |          8 |         11 |        138 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\bricks\UserState.js          | JavaScript |         27 |          3 |          6 |         36 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\bricks\article.js            | JavaScript |         19 |          1 |          1 |         21 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\bricks\brick.vue             | Vue        |        536 |         16 |         11 |        563 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\bricks\brickObject.js        | JavaScript |        105 |         11 |         13 |        129 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\bricks\drag.js               | JavaScript |         13 |          0 |          1 |         14 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\bricks\menu.js               | JavaScript |         50 |         11 |         12 |         73 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\BrickComponentsV1.vue | Vue        |         94 |          2 |          8 |        104 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\coments.vue           | Vue        |        134 |          4 |         11 |        149 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\navBar.vue            | Vue        |        184 |          3 |          7 |        194 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\promotSelf.vue        | Vue        |         50 |          0 |          2 |         52 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\recommand.vue         | Vue        |         45 |          0 |          4 |         49 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\recordInfo.vue        | Vue        |         35 |          0 |          2 |         37 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\rulesforBrick.js      | JavaScript |          2 |          0 |          3 |          5 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\selfnavbar.vue        | Vue        |        117 |          0 |          5 |        122 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\test.vue              | Vue        |          0 |          0 |          1 |          1 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\towerModel.js         | JavaScript |         11 |          0 |          1 |         12 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\common\toweritem.vue         | Vue        |         88 |          0 |          6 |         94 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\login\login.vue              | Vue        |        188 |          6 |         24 |        218 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\components\searchPage\search.vue        | Vue        |        313 |          0 |          9 |        322 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\css\HomeMianV2.css                      | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\design\Tower.json                       | JSON       |         11 |          0 |          1 |         12 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\design\article.json                     | JSON       |         34 |          0 |          0 |         34 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\design\brick.json                       | JSON       |         26 |          0 |          0 |         26 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\design\brickV2.json                     | JSON       |         19 |          0 |          0 |         19 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\design\collaborator.json                | JSON       |         17 |          0 |          1 |         18 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\main.js                                 | JavaScript |         24 |          0 |         14 |         38 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\newRequest\main.js                      | JavaScript |         11 |          0 |          2 |         13 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\plugins\element.js                      | JavaScript |          4 |          0 |          2 |          6 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\router\router.js                        | JavaScript |         39 |          1 |          5 |         45 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\store\data.js                           | JavaScript |         54 |          3 |          5 |         62 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\src\store\data_Old.js                       | JavaScript |        478 |         46 |         42 |        566 |
+| c:\Users\liu\Documents\GitHub\TowerNew\frontEnd\vue.config.js                               | JavaScript |          3 |          0 |          0 |          3 |
+| c:\Users\liu\Documents\GitHub\TowerNew\updateMD\0.4.1.md                                    | Markdown   |          8 |          0 |          1 |          9 |
+| c:\Users\liu\Documents\GitHub\TowerNew\updateMD\0.4.2.md                                    | Markdown   |          6 |          0 |          1 |          7 |
+| c:\Users\liu\Documents\GitHub\TowerNew\updateMD\0.5.0.md                                    | Markdown   |          2 |          0 |          0 |          2 |
+| Total                                                                                       |            |     40,098 |        600 |      1,211 |     41,909 |
++---------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

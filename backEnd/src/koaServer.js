@@ -7,7 +7,7 @@ const enforceHttps = require('koa-sslify').default;
 const https = require('https');
 const fs = require('fs');
 const path = require('path')
-const schedule = require('node-schedule');
+var CronJob = require('cron').CronJob;
 const app = new Koa();
 const router = new Router();
 const config = require('../config.js');
@@ -77,26 +77,26 @@ try {
   console.log('请设置ssl证书')
 }
 
+//定义定时器，清楚今天的数据
+var job = new CronJob('30 0 0 * * *',async function(){
+  console.log('定时任务启动');
+  await infoModel.updateOne({_id:'604e23a7bde84048acda8da3'}, {
+    visitToday: 0,
+    userNew: 0,
+    brickNew: 0,
+    articleNew: 0
+  })
+
+},null,true,'Asia/Shanghai')
+job.start();
+
+
 //启动服务器
 if (config.serveMode!="ssl") {
   app.listen(7865)
 } else {
   https.createServer(options, app.callback()).listen(7865)
 }
-
-//每日任务,清零数据
-const job = ()=>{
-  schedule.scheduleJob('0 0 0 * *', async () => {
-    await infoModel.updateOne({}, {
-      visitToday: 0,
-      userNew: 0,
-      brickNew: 0,
-      articleNew: 0
-    })
-  })
-}
-
-job()
 
 
 /* app.use(function (ctx, next) {

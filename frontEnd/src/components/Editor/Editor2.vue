@@ -128,7 +128,7 @@ export default {
       await this.article.getArticleData(this.articleId);
     },
     async changeArticle(){
-      let conf = confirm('确定提交吗？')
+      let conf = confirm('确定提交吗？恶意修改将被封号')
       if(!conf)return
       await app.post('/editor/changeArticle',{
         _id:this.article.articleData._id,
