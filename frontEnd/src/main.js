@@ -21,7 +21,7 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueToc)
 
-const router = new VueRouter({routes,mode: "history"});
+const router = new VueRouter({routes,mode: "hash"});
 const store = new Vuex.Store(storedata)
 
 Vue.prototype.$axios = Axios
