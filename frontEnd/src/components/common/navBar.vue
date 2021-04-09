@@ -9,13 +9,13 @@
     >
       <div
         class=" button selector"
-        @click="urlpush('/')"
+        @click="urlto('/')"
       >
         首页
       </div>
       <div
         class="button selector"
-        @click="urlpush('/square')"
+        @click="urlto('/square')"
       >
         搜索
       </div>
@@ -39,7 +39,7 @@
       <div
         class="button selector"
         v-if="!user.userData.loginState"
-        @click="urlpush('/login')"
+        @click="urlto('/login')"
       >
         登录
       </div>
@@ -82,6 +82,9 @@ export default {
           moduleId:'5e9b558e28490c2f9ebf9065'
         }
       })
+    },
+    urlto(url){
+      this.$router.push(url)
     }
   },
   computed: {
