@@ -1,7 +1,7 @@
 <template>
   <div class="recordInfo">
     <div>Liuser出品</div>
-    <div>© 2020</div>
+    <div>© 2021</div>
     <div>TongTianTa</div>
     <a
       href="http://www.beian.gov.cn/portal/registerSystemInfo?spm=a2c4g.11186623.7y9jhqsfz.113.34257243mu7XSO"
